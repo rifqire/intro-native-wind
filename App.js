@@ -1,12 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { Text, View } from 'react-native';
+import React from "react";
+import { Pressable, Text } from "react-native"
+import { styled, useColorScheme } from "nativewind";
 
-export default function App() {
+const StyledPressable = styled(Pressable)
+const StyledText = styled(Text)
+
+function App() {
+  const { colorScheme, toggleColorScheme } = useColorScheme();
+
   return (
-   <View className="flex-1 items-center justify-center p-4 bg-white">
-      <Text>Open up App.js to start working on your app with NativeWind!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <StyledPressable
+      onPress={toggleColorScheme}
+      className="flex-1 items-center justify-center dark:bg-slate-800"
+    >
+      <StyledText
+        selectable={false}
+        className="dark:text-white"
+      >
+        {`Try clicking me! ${colorScheme === "dark" ? "🌙" : "🌞"}`}
+      </StyledText>
+    </StyledPressable>
   );
 }
+
+export default App;
