@@ -22,6 +22,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e1a6fe18-4f48-4ab3-bd17-28bed22dbbcb"
+      }
+    },
+    "owner": "mavuika"
   }
 }
